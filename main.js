@@ -85,7 +85,7 @@ function displayDetails(){
   // console.log(names, years, level);
   if (!name || !level || !years){
       alert( "you missed filling a detail or some details");
-  }else if (!validate(name)){        
+  }else if (!validate(name) || name.trim().length === 0){        
       alert( "Please input a proper name");          
   }else{
   	name = properName(name);
