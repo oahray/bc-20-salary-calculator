@@ -37,6 +37,8 @@ input{
     font-size: 2em;
     font-weight: bold;
     font-family: sans-serif;
+    height: auto;
+    padding-bottom: 30px;
 }
 .details{
     width: 500px;
