@@ -10,15 +10,25 @@
      <div class="container">
          <div class="form">
              <input id="name" class="input" type="text" placeholder="Employee's Name">
-             <input id="years" class="input" type="text" placeholder="Employee's Number of Years of Service">
+             <div class='select-container'>
+                <select name="datum" required class="cadre-selection" id = "years">
+                    <option value="" disabled selected hidden>Years of Service</option>
+                    <option value="0-2" >0-2 years</option>
+                    <option value="3-4">3-4 years</option>
+                    <option value="5-6">5-6 years</option>
+                    <option value="7-8">7-8 years</option>
+                    <option value="above 8">Above 8 years</option>
+                </select>
+             </div>
+             <br/>
              <div class='select-container'>
                 <select name="datum" required class="cadre-selection" id = "cadreSelection">
                     <option value="" disabled selected hidden>Select Employee's Cadre</option>
-                    <option value="intern" >Interns</option>
-                    <option value="associate">Associates</option>
-                    <option value="manager">Managers</option>
-                    <option value="executive">Executives</option>
-                    <option value="director">Directors</option>
+                    <option value="Intern" >Intern</option>
+                    <option value="Associate">Associate</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Executive">Executive</option>
+                    <option value="Director">Director</option>
                 </select>
              </div>
              <br>           
