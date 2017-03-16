@@ -32,18 +32,6 @@ var Employee = function(name, level, years) {
 			case('above 8'):
 				return this.baseSalary * 0.8;
 		}
-		// if (this.years < 3) {
-		// 	return 0;
-		// }
-		// else if (this.years < 5) {
-		// 	return this.baseSalary * 0.2;
-		// }
-		// else if (this.years < 10) {
-		// 	return this.baseSalary * 0.3;
-		// }
-		// else {
-		// 	return this.baseSalary * 0.5;
-		// }
 	};
 
 	this.salary = this.getBaseSalary() + this.getBenefits();
@@ -75,11 +63,19 @@ var properName = function(name) {
 	name = name.split(" ");
 	proper = [];
 	for (var i = 0; i < name.length; i++) {
-		var first = name[i][0].toUpperCase();
-		proper.push(name[0].toUpperCase() + name.slice(1).toLowerCase());
+	  var eachName = [];
+	  for (var j = 0; j < name[i].length; j++) {
+	    if (j === 0) {
+	      eachName.push(name[i][0].toUpperCase());
+	    }
+	    else {
+	      eachName.push(name[i][j].toLowerCase());
+	    }
+	  }
+	  proper.push(eachName.join(""));
 	}
 	return proper.join(" ");
-}
+};
 
 function displayDetails(){
   var name = document.getElementById("name").value, 
@@ -92,7 +88,7 @@ function displayDetails(){
   }else if (!validate(name)){        
       alert( "Please input a proper name");          
   }else{
-  	// name = properName(name);
+  	name = properName(name);
     document.getElementById("report-name").innerHTML= "Name: " + name;
     document.getElementById("report-cadre").innerHTML="Level: " + level;
     document.getElementById("report-years").innerHTML= "Years Of Experience: " + years + " years";
